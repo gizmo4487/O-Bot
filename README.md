@@ -6,9 +6,9 @@ A Discord bot themed around O, a character in SEGA's Puyo Puyo Tetris
 ## Dependencies
 Run ``npm install`` in the bot folder to install dependencies.
 ## Commands
-* ``!help``: Display help message
-* ``!ping``: Test if bot is alive
-* ``!pi``: Make O speak
+* ``o!help``: Display help message
+* ``o!ping``: Test if bot is alive
+* ``o!pi``: Make O speak
 
 *More commands to follow*
 
