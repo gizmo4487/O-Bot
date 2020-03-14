@@ -10,25 +10,25 @@ bot.once('ready', () => {
 });
 bot.on('message', message => {
     // Prefix is '!'
-    if (message.content.substring(0, 1) == '!') {
-        var args = message.content.substring(1).split(' ');
+    if (message.content.substring(0, 2) == 'o!') {
+        var args = message.content.substring(2).split(' ');
         var cmd = args[0];
        
         args = args.splice(1);
 		
 		// Commands
         switch(cmd) {
-            	// !ping
+            	// o!ping
             	case 'ping':
                 	message.channel.send('Pong!');
             	break;
 			
-		// !help
+		// o!help
 		case 'help':
-			message.channel.send('Commands:\n!help: Display this message\n!ping: Test if bot is alive\n!pi: Make O speak');
+			message.channel.send('Commands:\no!help: Display this message\no!ping: Test if bot is alive\no!pi: Make O speak');
 		break;
 		
-		// !pi
+		// o!pi
 		case 'pi':
 			message.channel.send('Pipi? Pipi-pipipipipi!');
 			break;
