@@ -1,0 +1,11 @@
+{
+  "name": "O-Bot",
+  "version": "0.0.1",
+  "description": "Pipipi-pipipipi!",
+  "main": "o-bot.js",
+  "author": "gizmo4487",
+  "dependencies": {
+    "discord.io": "https://github.com/woor/discord.io/tarball/gateway_v6",
+    "winston": "^3.2.1"
+  }
+}
