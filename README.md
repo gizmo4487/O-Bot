@@ -3,6 +3,8 @@ A Discord bot themed around O, a character in SEGA's Puyo Puyo Tetris
 
 **Adapted from the tutorial at https://www.digitaltrends.com/gaming/how-to-make-a-discord-bot/**
 
+## Dependencies
+Unzip *node_modules.zip* and make sure that the *node_modules* folder is in the bot folder.
 ## Commands
 * ``!help``: Display help message
 * ``!ping``: Test if bot is alive
