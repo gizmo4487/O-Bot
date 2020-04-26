@@ -11,6 +11,8 @@ In order for ``o!listen`` to work, this bot **must** run on Linux with the "sox"
 
 This is used to convert the raw PCM audio into a WAV file for uploading.
 
+Additionally, a file named "ready.wav" containing 100 ms of silence should be placed in the O-Bot root directory. This is used by ``o!listen`` to get O-Bot out of a perpetual speaking state.
+
 ## A word about audio files
 O's voice lines are **not** included in this repository. They can be found in your (hopefully legal) copy of Puyo Puyo Tetris. By default, O-Bot looks for audio files numbered in hexadecimal from "00000000.wav" to "00000028.wav" in each voice folder. These folders should be "[O-Bot]/o_sound", "[O-Bot]/o_sound/alt", "[O-Bot]/o_sound/j", and "[O-Bot]/o_sound/j_alt".
 
