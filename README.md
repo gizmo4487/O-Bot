@@ -3,12 +3,34 @@ A Discord bot themed around O, a character in SEGA's Puyo Puyo Tetris
 
 **Adapted from the tutorial at https://www.digitaltrends.com/gaming/how-to-make-a-discord-bot/**
 
-## Dependencies
+## Dependencies and setup
 Run ``npm install`` in the bot folder to install dependencies.
+In order for ``o!listen`` to work, this bot **must** run on Linux with the "sox" program installed:
+
+``sudo apt install sox``
+
+This is used to convert the raw PCM audio into a WAV file for uploading.
+
+## A word about audio files
+O's voice lines are **not** included in this repository. They can be found in your (hopefully legal) copy of Puyo Puyo Tetris. By default, O-Bot looks for audio files numbered in hexadecimal from "00000000.wav" to "00000028.wav" in each voice folder. These folders should be "[O-Bot]/o_sound", "[O-Bot]/o_sound/alt", "[O-Bot]/o_sound/j", and "[O-Bot]/o_sound/j_alt".
+
 ## Commands
+### General
 * ``o!help``: Display help message
 * ``o!pi``: Make O speak
+
+### Voice
 * ``o!voice``: O-Bot will join a voice channel and play one of O's voice lines, then leave
+* ``o!altvoice``: Same as ``o!voice``, but with O's alternate voice
+* ``o!jvoice``: Same as ``o!voice``, but with O's default Japanese voice
+* ``o!jaltvoice``: Same as ``o!voice``, but with O's alternate Japanese voice
+* ``o!listen``: O-Bot will record your voice until you stop speaking, then send a WAV file to the text channel you ran the command in
+
+### Other
+* ``o!randomhex``: Generate a random hexadecimal number from 0x00 to 0x28 (used to debug randomHex() for selecting which WAV file to play)
+* ``o!time``: Get the current time (including seconds) in a 12-hour format
+* ``o!twitch``: Get link to my Twitch channel
+* ``o!donate``: Get link to my Streamlabs donation page
 
 *More commands to follow*
 
