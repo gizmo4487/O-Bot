@@ -22,7 +22,7 @@ O's voice lines are **not** included in this repository. They can be found in yo
 * ``o!pi``: Make O speak
 
 ### Voice
-* ``o!voice``: O-Bot will join a voice channel and play one of O's voice lines, then leave
+* ``o!voice``: O-Bot will join a voice channel and play one of O's voice lines
 * ``o!altvoice``: Same as ``o!voice``, but with O's alternate voice
 * ``o!jvoice``: Same as ``o!voice``, but with O's default Japanese voice
 * ``o!jaltvoice``: Same as ``o!voice``, but with O's alternate Japanese voice
