@@ -46,4 +46,5 @@ Be sure O-Bot has permission to read messages, send messages, and speak in voice
 **Please note that 'auth.json' is intentionally missing. If you're looking for tokens, go to Chuck E. Cheese!**
 
 *TETR.IO created by osk*
+
 *O-Bot created by gizmo4487*
