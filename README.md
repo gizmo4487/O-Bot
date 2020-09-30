@@ -29,6 +29,7 @@ O's voice lines are **not** included in this repository. They can be found in yo
 * ``o!listen``: O-Bot will record your voice until you stop speaking, then send a WAV file to the text channel you ran the command in
 
 ### Other
+* ``o!tetrio-rooms``: Get the current room list for the game [TETR.IO](https://tetr.io)
 * ``o!randomhex``: Generate a random hexadecimal number from 0x00 to 0x28 (used to debug randomHex() for selecting which WAV file to play)
 * ``o!time``: Get the current time (including seconds) in a 12-hour format
 * ``o!twitch``: Get link to my Twitch channel
@@ -40,9 +41,9 @@ O's voice lines are **not** included in this repository. They can be found in yo
 To add O-Bot to your server, [click here](https://discordapp.com/oauth2/authorize?&client_id=688221134751399992&scope=bot&permissions=68672)
 
 ## More Information
-The bot's availability will be limited at first since my computer and I share the same sleep schedule. If O-Bot is unavailable, it will appear as "Offline".
+Be sure O-Bot has permission to read messages, send messages, and speak in voice channels.
 
 **Please note that 'auth.json' is intentionally missing. If you're looking for tokens, go to Chuck E. Cheese!**
 
-
-*Created by gizmo4487*
+*TETR.IO created by osk*
+*O-Bot created by gizmo4487*
