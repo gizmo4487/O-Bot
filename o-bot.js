@@ -1,4 +1,5 @@
 const Discord = require('discord.js');
+const XMLHttpRequest = require("xmlhttprequest").XMLHttpRequest;
 const Constants = require('discord.js/src/util/Constants.js');
 const fs = require('fs');
 Constants.DefaultOptions.ws.properties.$browser='Discord Android';
@@ -11,36 +12,42 @@ const bot = new Discord.Client({autoReconnect:true});
 
 // Display console message when logged in
 bot.once('ready', () => {
-    console.log('Connected');
-    bot.user.setActivity('Puyo Puyo\u2122Tetris\u00AE',{type: 'PLAYING'});
+    console.log('O-Bot is ready!');
+    bot.user.setActivity('Puyo Puyo\u2122Tetris\u00AE 2',{type: 'PLAYING'});
+	
+	// Uncomment to set status to "idle"
+	/*bot.user.setPresence({
+		status: 'idle'
+	});*/
 });
 
 // Reconnecting
 bot.on("reconnecting", () => {
-	console.log("[" + getTime() + "] Reconnecting!");
+	console.log("Reconnecting!");
 	});
 	
 // Resume
 bot.on("resume", () => {
-	console.log("[" + getTime() + "] Connection restored!");
-	bot.user.setActivity('Puyo Puyo\u2122Tetris\u00AE',{type: 'PLAYING'});
+	console.log("Connection restored!");
+	bot.user.setActivity('Puyo Puyo\u2122Tetris\u00AE 2',{type: 'PLAYING'});
 	});
 	
 //bot.on('debug', console.log);
 bot.on('message', message => {
+	bot.user.setActivity('Puyo Puyo\u2122Tetris\u00AE 2',{type: 'PLAYING'});
     // Prefix is 'o!'
     if (message.content.substring(0, 2) == 'o!') {
         var args = message.content.substring(2).split(' ');
         var cmd = args[0];
        
         args = args.splice(1);
-		
+
 		// Commands
         switch(cmd) {
 			
 			// o!help
 			case 'help':
-				message.channel.send("Commands:\n\n**General**\n``o!help``: Display this message\n``o!pi``: Make O speak\n\n**Voice**\n``o!voice``: Make O speak for real\n``o!altvoice``: Make O speak in his alternate voice\n``o!jvoice``: Play one of O's Japanese voice lines\n``o!jaltvoice``: Play one of O's alternate Japanese voice lines\n``o!listen``: O-Bot will record your voice and send it back to you! (These recordings are NOT stored locally.)\n``o!dc``: Make O-Bot leave the voice channel\n\n**Other**\n``o!twitch``: Get link for O-Bot creator's Twitch channel\n``o!donate``: Feed O-Bot");
+				message.channel.send("Commands:\n\n**General**\n``o!help``: Display this message\n``o!pi``: Make O speak\n\n**Voice**\n``o!voice``: Make O speak for real\n``o!altvoice``: Make O speak in his alternate voice\n``o!jvoice``: Play one of O's Japanese voice lines\n``o!jaltvoice``: Play one of O's alternate Japanese voice lines\n``o!listen``: O-Bot will record your voice and send it back to you! (These recordings are NOT stored locally.)\n``o!dc``: Make O-Bot leave the voice channel\n\n**Other**\n``o!tetrio-rooms``: Show all open rooms in TETR.IO\n``o!twitch``: Get link for O-Bot creator's Twitch channel\n``o!donate``: Feed O-Bot");
 				break;
 			
 			// o!pi
@@ -89,6 +96,17 @@ bot.on('message', message => {
 				}
 				
 				break;
+				
+			case 'leave':
+				if(!message.member.voice.channel){
+					message.channel.send("``o!leave`` can only be run while you are in a voice channel!");
+				}
+				else{
+					message.channel.send("Disconnecting!");
+					message.member.voice.channel.leave();
+				}
+				
+				break;
 			// o!randomhex
 			case 'randomhex':
 				message.channel.send("Your random hexadecimal number is " + randomHex());
@@ -102,6 +120,13 @@ bot.on('message', message => {
 			// o!listen
 			case 'listen':
 				listen(message);
+				break;
+				
+			// o!tetrio-rooms
+			case 'tetrio-rooms':
+				message.channel.startTyping();
+				httpGet(message, "https://tetr.io/api/rooms");
+				//message.channel.send("Command temporarily unavailable");
 				break;
 	
 			// Invalid command
@@ -269,6 +294,52 @@ async function listen(message){
 		
 	
 }
-	
+
+function printRooms(message, jsonInput){
+	var additionalText = "";
+	var roomList = "";
+	var roomState = "";
+	roomStats = JSON.parse(jsonInput);
+	message.channel.send("Room list:");
+	for(i in roomStats.rooms){
+		additionalText = "";
+		if(roomStats.rooms[i].meta.userlimit>0){
+			additionalText = "/" + roomStats.rooms[i].meta.userlimit;
+		}
+		if(roomStats.rooms[i].playercount > roomStats.rooms[i].playingplayers){
+			additionalText = additionalText + " " + "+" + (roomStats.rooms[i].playercount - roomStats.rooms[i].playingplayers);
+		}
+		roomList = roomList + "\n" + roomStats.rooms[i].meta.name + " -- " + roomStats.rooms[i].playingplayers + additionalText + "\n" + roomStats.rooms[i].state + "\nhttps://tetr.io/#" + roomStats.rooms[i].id + "\n\n";
+	}
+	message.channel.send(roomList);
+	message.channel.stopTyping();
+
+//console.log(jsonInput);
+//console.log(roomStats.rooms);
+
+}
+
+function httpGet(message, URL)
+{
+    var xmlHttp = new XMLHttpRequest();
+    xmlHttp.open( "GET", URL,  true);
+	xmlHttp.setRequestHeader("Authorization", "Bearer " + auth.tetrio_token);
+	xmlHttp.onload = function(e){
+		if(xmlHttp.readyState === 4){
+			if(xmlHttp.status === 200){
+				printRooms(message, xmlHttp.responseText);
+			} else{
+				console.error(xmlHttp.statusText);
+				message.channel.stopTyping();
+			}
+		}
+	};
+	xmlHttp.onerror = function (e){
+		console.error(xmlHttp.statusText);
+		message.channel.stopTyping();
+	};
+    xmlHttp.send( null );
+    
+}	
 
 bot.login(auth.token);
