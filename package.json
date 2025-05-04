@@ -6,14 +6,16 @@
   "author": "gizmo4487",
   "dependencies": {
     "@discordjs/opus": "^0.1.0",
+    "@discordjs/voice": "^0.16.0",
     "bufferutil": "^4.0.1",
-    "discord.js": "^12.0.2",
+    "discord.js": "14",
     "dotenv": "^8.2.0",
     "erlpack": "github:discordapp/erlpack",
     "ffmpeg-static": "^3.0.0",
     "install-peerdeps": "^2.0.1",
     "install-peers": "^1.0.3",
     "libsodium-wrappers": "^0.7.6",
+    "opusscript": "^0.0.8",
     "xmlhttprequest": "^1.8.0",
     "zlib-sync": "^0.1.6"
   }

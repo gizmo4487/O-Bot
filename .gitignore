@@ -1,0 +1,7 @@
+node_modules
+o_sound
+.env
+deploy-commands*.js
+delete-command-*.js
+*.wav
+*.mp3
