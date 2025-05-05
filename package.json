@@ -5,18 +5,19 @@
   "main": "o-bot.js",
   "author": "gizmo4487",
   "dependencies": {
-    "@discordjs/opus": "^0.1.0",
-    "@discordjs/voice": "^0.16.0",
-    "bufferutil": "^4.0.1",
+    "@discordjs/opus": "^0.10.0",
+    "@discordjs/voice": "^0.18.0",
+    "@mapbox/node-pre-gyp": "^2.0.0",
+    "bufferutil": "^4.0.9",
     "discord.js": "14",
-    "dotenv": "^8.2.0",
+    "dotenv": "^16.5.0",
     "erlpack": "github:discordapp/erlpack",
-    "ffmpeg-static": "^3.0.0",
-    "install-peerdeps": "^2.0.1",
-    "install-peers": "^1.0.3",
-    "libsodium-wrappers": "^0.7.6",
-    "opusscript": "^0.0.8",
+    "ffmpeg-static": "^5.2.0",
+    "install-peerdeps": "^3.0.7",
+    "install-peers": "^1.0.4",
+    "libsodium-wrappers": "^0.7.15",
+    "opusscript": "^0.1.1",
     "xmlhttprequest": "^1.8.0",
-    "zlib-sync": "^0.1.6"
+    "zlib-sync": "^0.1.10"
   }
 }
