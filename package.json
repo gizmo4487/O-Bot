@@ -9,7 +9,7 @@
     "@discordjs/voice": "^0.18.0",
     "@mapbox/node-pre-gyp": "^2.0.0",
     "bufferutil": "^4.0.9",
-    "discord.js": "14",
+    "discord.js": "^14.19.3",
     "dotenv": "^16.5.0",
     "erlpack": "github:discordapp/erlpack",
     "ffmpeg-static": "^5.2.0",
