@@ -1,6 +1,6 @@
 {
   "name": "O-Bot",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "description": "Pipipi-pipipipi!",
   "main": "o-bot.js",
   "author": "gizmo4487",
@@ -19,5 +19,10 @@
     "opusscript": "^0.1.1",
     "xmlhttprequest": "^1.8.0",
     "zlib-sync": "^0.1.10"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.26.0",
+    "eslint": "^9.26.0",
+    "globals": "^16.1.0"
   }
 }

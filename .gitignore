@@ -5,3 +5,4 @@ deploy-commands*.js
 delete-command-*.js
 *.wav
 *.mp3
+.vscode/*

@@ -1,6 +1,6 @@
 const { SlashCommandBuilder } = require('discord.js');
 const vcutil = require('../util/vc.js');
-const util = require('../util/util.js');
+
 module.exports = {
 	data: new SlashCommandBuilder()
 		.setName('leave')

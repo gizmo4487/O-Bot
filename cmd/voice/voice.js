@@ -18,7 +18,7 @@ module.exports = {
 				)),
 	async execute(interaction) {
 		const voiceOption = interaction.options.getString('type') ?? 'normal';
-		const prefix = 'o_sound' + (voiceOption!='normal'?'/' + voiceOption:'');
+		const prefix = 'o_sound' + (voiceOption != 'normal' ? '/' + voiceOption : '');
 		const response = await vcutil.play(interaction, prefix + "/000000" + util.randomHex() + ".wav");
 		await interaction.reply(response);
 	},
