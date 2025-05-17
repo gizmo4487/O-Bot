@@ -1,3 +1,4 @@
+[![Node.js CI](https://github.com/gizmo4487/O-Bot/actions/workflows/node.js.yml/badge.svg)](https://github.com/gizmo4487/O-Bot/actions/workflows/node.js.yml)
 # O-Bot
 A Discord bot themed around O, a character in SEGA's Puyo Puyo Tetris
 
