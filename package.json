@@ -7,22 +7,13 @@
   "dependencies": {
     "@discordjs/opus": "^0.10.0",
     "@discordjs/voice": "^0.18.0",
-    "@mapbox/node-pre-gyp": "^2.0.0",
-    "bufferutil": "^4.0.9",
     "discord.js": "^14.19.3",
-    "dotenv": "^16.5.0",
-    "erlpack": "github:discordapp/erlpack",
     "ffmpeg-static": "^5.2.0",
-    "install-peerdeps": "^3.0.7",
-    "install-peers": "^1.0.4",
-    "libsodium-wrappers": "^0.7.15",
-    "opusscript": "^0.1.1",
-    "xmlhttprequest": "^1.8.0",
-    "zlib-sync": "^0.1.10"
+    "sodium": "^3.0.2"
   },
   "devDependencies": {
-    "@eslint/js": "^9.26.0",
-    "eslint": "^9.26.0",
+    "@eslint/js": "^9.27.0",
+    "eslint": "^9.27.0",
     "globals": "^16.1.0"
   }
 }
