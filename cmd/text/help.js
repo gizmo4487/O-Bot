@@ -25,7 +25,7 @@ module.exports = {
 				},
 				{
 					name: "Twitch",
-					value: "[notengonombreusario](https://twitch.tv/notengonombreusario)",
+					value: "[gizmo_4487](https://twitch.tv/gizmo_4487)",
 					inline: true,
 				}
 			)
